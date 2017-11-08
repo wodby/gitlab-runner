@@ -6,6 +6,8 @@ if [[ -n "${DEBUG}" ]]; then
     set -x
 fi
 
-gotpl "/etc/gotpl/config.toml.tpl" > "/etc/gitlab-runner/config.toml"
+if [[ -n "${CI_SERVER_URL}" && -n "${CI_SERVER_TOKEN}" ]]; then
+    gitlab-runner register --non-interactive
+fi
 
 exec /entrypoint "${@}"

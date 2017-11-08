@@ -5,6 +5,10 @@
 [![Docker Stars](https://img.shields.io/docker/stars/wodby/gitlab-runner.svg)](https://hub.docker.com/r/wodby/gitlab-runner)
 [![Wodby Slack](http://slack.wodby.com/badge.svg)](http://slack.wodby.com)
 
+## Overview
+
+This gitlab runner image registers on CI server automatically when `CI_SERVER_URL` and `CI_SERVER_TOKEN` specified.
+
 ## Docker Images
 
 * All images are based on Alpine Linux
@@ -20,18 +24,14 @@ For better reliability we release images with stability tags (`wodby/gitlab-runn
 
 ## Environment Variables
 
-| Variable                           | Default Value          | Description  |
-| ---------------------------------- | ---------------------- | ------------ |
-| GITLAB_RUNNER_NAME                 | Runner                 |              |
-| GITLAB_RUNNER_URL                  |                        |              |
-| GITLAB_RUNNER_TOKEN                |                        |              |
-| GITLAB_RUNNER_EXECUTOR             | docker                 |              |
-| GITLAB_RUNNER_DOCKER_TLS_VERIFY    | false                  |              |
-| GITLAB_RUNNER_DOCKER_IMAGE         | wodby/alpine:3.6-1.0.0 |              |
-| GITLAB_RUNNER_DOCKER_DISABLE_CACHE | false                  |              |
-| GITLAB_RUNNER_DOCKER_VOLUMES       | `["/cache"]`           |              |
-| GITLAB_RUNNER_DOCKER_SHM_SIZE      | 0                      |              |
-| GITLAB_RUNNER_DOCKER_PRIVILEGED    | true                   |              |
+| Variable        | Default Value          | Description                                          |
+| --------------- | ---------------------- | ---------------------------------------------------- |
+| RUNNER_EXECUTOR | docker                 |                                                      |
+| DOCKER_IMAGE    | wodby/alpine:3.6-1.0.0 |                                                      |
+| CI_SERVER_URL   |                        | Required for non-interactive auto registration on CI |
+| CI_SERVER_TOKEN |                        | Required for non-interactive auto registration on CI |
+
+Run `gitlab-runner register --help` to see the full list of environment variables
 
 ## Deployment
 
