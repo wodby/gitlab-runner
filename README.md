@@ -7,7 +7,7 @@
 
 ## Overview
 
-This gitlab runner image registers on CI server automatically when `CI_SERVER_URL` and `CI_SERVER_TOKEN` specified.
+This gitlab runner image registers on CI server automatically when `CI_SERVER_URL` and `REGISTRATION_TOKEN` specified.
 
 ## Docker Images
 
@@ -24,12 +24,12 @@ For better reliability we release images with stability tags (`wodby/gitlab-runn
 
 ## Environment Variables
 
-| Variable        | Default Value          | Description                                          |
-| --------------- | ---------------------- | ---------------------------------------------------- |
-| RUNNER_EXECUTOR | docker                 |                                                      |
-| DOCKER_IMAGE    | wodby/alpine:3.6-1.0.0 |                                                      |
-| CI_SERVER_URL   |                        | Required for non-interactive auto registration on CI |
-| CI_SERVER_TOKEN |                        | Required for non-interactive auto registration on CI |
+| Variable           | Default Value          | Description |
+| ------------------ | ---------------------- | ----------- |
+| RUNNER_EXECUTOR    | docker                 |             |
+| DOCKER_IMAGE       | wodby/alpine:3.6-1.0.0 |             |
+| CI_SERVER_URL      |                        |             |
+| REGISTRATION_TOKEN |                        |             |
 
 Run `gitlab-runner register --help` to see the full list of environment variables
 
