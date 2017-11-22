@@ -10,7 +10,7 @@ fi
 touch /etc/gitlab-runner/config.toml
 
 if [[ -n "${CI_SERVER_URL}" && -n "${REGISTRATION_TOKEN}" ]]; then
-    gitlab-runner register ${options}
+    gitlab-runner ${options} register
 fi
 
 exec /entrypoint "${@}"
