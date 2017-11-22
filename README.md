@@ -18,9 +18,9 @@ This gitlab runner image registers on CI server automatically when `CI_SERVER_UR
 
 For better reliability we release images with stability tags (`wodby/gitlab-runner:10.1-X.X.X`) which correspond to git tags. We **strongly recommend** using images only with stability tags. Below listed basic tags:
 
-| Image tag (Dockerfile)                                                             | Gitlab Runner |
-| ---------------------------------------------------------------------------------- | ------------- |
-| [10, 10.1 (latest)](https://github.com/wodby/gitlab-runner/tree/master/Dockerfile) | 10.1.0        |
+| Image tag (Dockerfile)                                                                     | Gitlab Runner |
+| ------------------------------------------------------------------------------------------ | ------------- |
+| [10, 10.1, 10.1.0 (latest)](https://github.com/wodby/gitlab-runner/tree/master/Dockerfile) | 10.1.0        |
 
 ## Environment Variables
 
