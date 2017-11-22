@@ -1,7 +1,7 @@
 -include env_make
 
 GITLAB_RUNNER_VER ?= 10.1.0
-TAG ?= 10
+TAG ?= $(GITLAB_RUNNER_VER)
 
 REPO = wodby/gitlab-runner
 NAME = gitlab-runner-$(GITLAB_RUNNER_VER)
