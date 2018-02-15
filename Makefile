@@ -1,6 +1,8 @@
 -include env_make
 
-GITLAB_RUNNER_VER ?= 10.1.0
+GITLAB_RUNNER_VER ?= 10.4.0
+GITLAB_RUNNER_MINOR_VER ?= $(shell echo "${GITLAB_RUNNER_VER}" | grep -oE '^[0-9]+\.[0-9]+')
+
 TAG ?= $(GITLAB_RUNNER_VER)
 
 REPO = wodby/gitlab-runner
